@@ -1,0 +1,23 @@
+{
+  "name": "trello-clone-api",
+  "version": "1.0.0",
+  "description": "thanhliem api learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thanhliem129/trello-clone-api.git"
+  },
+  "keywords": [],
+  "author": "thanhliemdang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thanhliem129/trello-clone-api/issues"
+  },
+  "homepage": "https://github.com/Thanhliem129/trello-clone-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
