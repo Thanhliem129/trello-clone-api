@@ -2,7 +2,8 @@
   "name": "trello-clone-api",
   "version": "1.0.0",
   "description": "thanhliem api learn",
-  "main": "index.js",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
