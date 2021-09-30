@@ -5,7 +5,12 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/src/server.js",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,15 @@
   },
   "homepage": "https://github.com/Thanhliem129/trello-clone-api#readme",
   "dependencies": {
+    "@babel/runtime": "^7.15.4",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "nodemon": "^2.0.13"
   }
 }
