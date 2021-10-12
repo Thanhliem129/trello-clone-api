@@ -1,15 +1,22 @@
 import express from "express";
-import { mapOrder } from './utilities/sorts.js';
 import { connectDb } from './config/mongodb';
 import { env } from "./config/environment";
 
-const app = express();
+connectDb().then(()=> console.log('connected success') )
+.then(()=> bootServer())
+.catch(error => {
+   console.log(error)
+   process.exit(1)
+})
 
- connectDb().catch(console.log)
+const bootServer = () => {
+   const app = express();
 
- app.get('/', (req, res) => {
+   app.get('/', (req, res) => {
       res.json({name:'Đặng Thanh Liêm'})
- })
- app.listen(env.PORT, env.HOST, () => {
-    console.log(`hello i'm running at ${env.HOST}:${env.PORT}/`)
- })
+   })
+  
+   app.listen(env.APP_PORT, env.APP_HOST, () => {
+      console.log(`hello i'm running at ${env.APP_HOST}:${env.APP_PORT}/`)
+   })
+}
