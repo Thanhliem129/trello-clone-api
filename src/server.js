@@ -13,6 +13,10 @@ connectDb().then(()=> console.log('connected success') )
 const bootServer = () => {
    const app = express();
 
+   //enable req.body
+   app.use(express.json())
+
+   // use api
    app.use('/v1', apiV1)
   
    app.listen(env.APP_PORT, env.APP_HOST, () => {

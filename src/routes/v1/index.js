@@ -1,5 +1,6 @@
 import express from 'express';
 import { HttpStatusCode } from '../../utilities/constants';
+import { boardRoutes } from './board.route';
 
 const router = express.Router();
 
@@ -11,6 +12,7 @@ router.get('/status', (req, res) => {
 })
 
 //board api 
+router.use('/boards', boardRoutes)
 
 
 
